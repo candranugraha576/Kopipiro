@@ -21,6 +21,10 @@ A full-stack PHP & MySQL ordering web application developed for **Kopipiro**. Th
 - **Sales Analytics**: Interactive 7-day revenue performance chart built with Chart.js.
 - **Excel Export**: Generate and download real-time order and revenue records in `.csv` format compatible with Microsoft Excel.
 
+### Public API & Integration 
+- **Public API Seeding**: Automatically fetches live coffee menu items, ingredients, and descriptions from `https://api.sampleapis.com/coffee/hot` using PHP cURL (`seed_from_api.php`).
+- **Payment Sandbox**: Simulated checkout payment confirmation supporting multi-method transactions.
+
 ---
 
 ## Database Architecture
@@ -57,6 +61,8 @@ kopipiro/
 ├── logout.php                 # Session termination
 ├── navbar.php                 # Dynamic role-based navigation bar
 ├── order_history.php          # Customer personal order tracker
+├── pay.php                    # Sandbox payment gateway flow
 ├── register.php               # Customer registration endpoint
 ├── seed_admin.php             # Default account initialization script
+├── seed_from_api.php          # Consumes public coffee API via cURL
 └── view_orders.php            # Order validation (Cashier) & Sales charts (Owner)
