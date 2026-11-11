@@ -31,7 +31,32 @@ The relational schema comprises 7 primary entities:
 - `categories` (Product classifications)
 - `products` (Name, price, category, rating, image)
 - `carts` (Cart line items mapped by user or session)
-- `orders` (Master order records, discounts, assigned staff)[cite: 3]
-- `order_details` (Line items, historical prices, and per-item discounts)[cite: 3]
+- `orders` (Master order records, discounts, assigned staff)
+- `order_details` (Line items, historical prices, and per-item discounts)
 
 ---
+
+## Project Structure
+
+```text
+kopipiro/
+├── admin/                     # Owner-only administrative area
+│   ├── create.php             # Add new product + image upload
+│   ├── delete.php             # Remove product
+│   ├── edit.php               # Update product & replace image
+│   └── index.php              # Product inventory management
+├── uploads/                   # Stored product images
+├── auth.php                   # Authentication guards & role-check middleware
+├── cart.php                   # Cart item handler
+├── checkout.php               # Checkout summary & 10% discount calculation engine
+├── config.php                 # MySQL database connection configuration
+├── confirmation_order.php     # Post-checkout order confirmation page
+├── excel_generate.php         # Sales report export script
+├── index.php                  # Customer-facing menu storefront
+├── login.php                  # Authentication login endpoint
+├── logout.php                 # Session termination
+├── navbar.php                 # Dynamic role-based navigation bar
+├── order_history.php          # Customer personal order tracker
+├── register.php               # Customer registration endpoint
+├── seed_admin.php             # Default account initialization script
+└── view_orders.php            # Order validation (Cashier) & Sales charts (Owner)
